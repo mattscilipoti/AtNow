@@ -35,6 +35,7 @@ module.exports = function(passport){
         return callback(null, false);
       }
       else {
+        // mms: was expecting a clarifying comment, like the other 2 conditional statements (above).
         var newUser = new User();
         newUser.local.email = email;
         newUser.local.password = newUser.encrypt(password);
@@ -49,12 +50,12 @@ module.exports = function(passport){
     });
   }));
 
-
+  // mms: indentation
   passport.use('twitter', new TwitterStrategy({
-  consumerKey: env.twitter.consumerKey,
-  consumerSecret: env.twitter.consumerSecret,
-  callbackUrl: env.twitter.callbackUrl
-}, function(token, secret, profile, done){
+    consumerKey: env.twitter.consumerKey,
+    consumerSecret: env.twitter.consumerSecret,
+    callbackUrl: env.twitter.callbackUrl
+  }, function(token, secret, profile, done){
   process.nextTick(function(){
     User.findOne({'twitter.id': profile.id}, function(err, user){
       if(err) return done(err);

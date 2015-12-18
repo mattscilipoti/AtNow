@@ -20,6 +20,7 @@ app.set('view engine', 'hbs');
 app.set("views",__dirname + "/views");
 
 app.use(express.static(__dirname + '/public'));
+// mms: logging?  nice.
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
