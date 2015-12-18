@@ -1,6 +1,7 @@
 $(document).ready(function(){
   session.mainMessage('Welcome to @Now');
 
+  // mms: interesting activities to run as your page loads
   userView.showLogin();
   userView.showSignup();
   userView.submitForm();

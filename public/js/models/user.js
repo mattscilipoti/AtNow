@@ -22,6 +22,7 @@ User.fetch = function() {
   return request;
 };
 
+// mms: Discuss User methods  vs. instance/prototype methods
 User.logOut = function(){
   var self = this;
   var url = "http://127.0.0.1:3000/logout";
@@ -37,6 +38,7 @@ User.logOut = function(){
     // userView.toggleLoginDisplays();
     // userView.toggleLogoutDisplays();
   }).fail(function(res){
+    // mms: LOVE ITTTT
     console.log("FAILED LOGOUTTTT");
     alert("failure from user post");
   });
